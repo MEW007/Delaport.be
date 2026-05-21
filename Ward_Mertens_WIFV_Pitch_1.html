@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ward Mertens — WIFV Co-Coordinator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d1b2a;
+    --ink-soft: #2c3e50;
+    --paper: #f5f1e8;
+    --paper-warm: #ede6d4;
+    --accent: #1a4d5c;
+    --accent-soft: #4a7a8a;
+    --rule: #c8bfa8;
+    --highlight: #b8956a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-weight: 400;
+    background-image:
+      radial-gradient(ellipse at top right, rgba(26, 77, 92, 0.04), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(184, 149, 106, 0.05), transparent 50%);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 70px 60px 60px;
+  }
+
+  /* --- Masthead --- */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    align-items: end;
+  }
+  .eyebrow {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 62px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .name em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+  .contact {
+    text-align: right;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .contact strong { color: var(--ink); font-weight: 500; }
+
+  /* --- Position banner --- */
+  .position {
+    margin-top: 28px;
+    padding: 18px 24px;
+    background: var(--paper-warm);
+    border-left: 3px solid var(--accent);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .position strong { color: var(--ink); font-weight: 500; }
+
+  /* --- Section structure --- */
+  section { margin-top: 56px; }
+
+  .section-label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .section-label .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--accent-soft);
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+    color: var(--ink);
+  }
+  h2 em { font-style: italic; color: var(--accent); }
+
+  p { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 14px; }
+  p strong { color: var(--ink); font-weight: 500; }
+
+  /* --- Three pillars --- */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin-top: 24px;
+    border: 1px solid var(--rule);
+  }
+  .pillar {
+    background: var(--paper);
+    padding: 28px 24px;
+  }
+  .pillar-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--highlight);
+    margin-bottom: 8px;
+  }
+  .pillar-title {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .pillar-body {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* --- Track record --- */
+  .record {
+    margin-top: 24px;
+  }
+  .record-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 130px;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .record-row:last-child { border-bottom: none; }
+  .record-year {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--accent);
+  }
+  .record-detail strong {
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 15px;
+  }
+  .record-detail span {
+    display: block;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+  }
+  .record-value {
+    text-align: right;
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--highlight);
+    font-weight: 500;
+  }
+
+  /* --- Case study --- */
+  .case {
+    margin-top: 24px;
+    background: var(--paper-warm);
+    padding: 36px 40px;
+    position: relative;
+    border: 1px solid var(--rule);
+  }
+  .case-tag {
+    position: absolute;
+    top: -10px;
+    left: 36px;
+    background: var(--paper);
+    padding: 0 12px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .case-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .case-subtitle {
+    font-size: 12px;
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 22px;
+  }
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 18px;
+  }
+  .case-block h4 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .case-block p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+  .case-takeaway {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .case-takeaway::before {
+    content: '"';
+    font-size: 36px;
+    line-height: 0;
+    position: relative;
+    top: 14px;
+    margin-right: 4px;
+    color: var(--highlight);
+  }
+
+  /* --- Footer / signature --- */
+  .signature {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 30px;
+  }
+  .sig-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 540px;
+  }
+  .sig-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    color: var(--ink);
+    text-align: right;
+  }
+  .sig-mark span {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent-soft);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 780px) {
+    .page { padding: 40px 28px; }
+    .masthead { grid-template-columns: 1fr; gap: 24px; }
+    .contact { text-align: left; }
+    .name { font-size: 44px; }
+    .pillars { grid-template-columns: 1fr; }
+    .record-row { grid-template-columns: 1fr; gap: 6px; }
+    .record-value { text-align: left; }
+    .case { padding: 28px 22px; }
+    .case-grid { grid-template-columns: 1fr; gap: 18px; }
+    .signature { grid-template-columns: 1fr; }
+    .sig-mark { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div>
+      <div class="eyebrow">Candidacy &middot; May 2026</div>
+      <h1 class="name">Ward Mertens<br><em>delivers infrastructure.</em></h1>
+    </div>
+    <div class="contact">
+      <strong>Steenokkerzeel, Belgium</strong><br>
+      +32 470 17 35 27<br>
+      ward@delaport.be<br>
+      NL &middot; EN &middot; FR
+    </div>
+  </header>
+
+  <div class="position">
+    For the role of <strong>Independent Co-Coordinator (Project Finance Director)</strong> at <strong>WIFV</strong>, a &euro;50M water infrastructure investment vehicle in partnership with SFPIM and Ethias.
+  </div>
+
+  <!-- Thesis -->
+  <section>
+    <div class="section-label"><span class="num">i.</span> Thesis</div>
+    <h2>The financing seat needs an <em>executor</em> beside it.</h2>
+    <p>Most project finance directors come from the model. I come from the site, the contract, and the schedule, with the financial training to engage credibly with the model.</p>
+    <p>WIFV will succeed or fail on the same questions that have defined my fifteen years in capital infrastructure: <strong>does the EPC contractor actually carry the risk the model assumes? How do O&amp;M obligations behave under stress? Where does the schedule break before the IRR does?</strong> I have spent my career on the answer side of those questions, including in water infrastructure specifically, having co-developed the first MVP of off-grid water solutions company BOSAQ alongside its founder.</p>
+  </section>
+
+  <!-- Three pillars -->
+  <section>
+    <div class="section-label"><span class="num">ii.</span> A hybrid profile</div>
+    <h2>Three disciplines, <em>one operator.</em></h2>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Execution depth</div>
+        <div class="pillar-body">Fifteen years delivering capital infrastructure: offshore wind, HV cable, CCS, electrification, and water. Up to 150 FTE and &euro;150M+ contracts. Co-developed the first MVP of off-grid water solutions startup BOSAQ (founded by Jacob Bossaer). EPC and concession contracts negotiated and lived from the inside.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Finance &amp; governance</div>
+        <div class="pillar-body">Executive MBA at Antwerp Management School (2025&ndash;2026). Active work in DCF, NPV, IRR, capital structuring, sensitivity analysis. Comfortable at board level; trained to translate execution risk into financial language.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Digital &amp; tooling</div>
+        <div class="pillar-body">ERP (IFS, Oracle, SNOW), Oracle Primavera and Aconex, MS Copilot, Visual Studio Code, VB. A rare ability to build the reporting and controls layer that makes a portfolio actually visible to its board.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track record -->
+  <section>
+    <div class="section-label"><span class="num">iii.</span> Track record</div>
+    <h2>Capital projects, <em>delivered.</em></h2>
+    <div class="record">
+      <div class="record-row">
+        <div class="record-year">2025&ndash;</div>
+        <div class="record-detail">
+          <strong>PSA Antwerp, Department Manager, Electricity &amp; Energy</strong>
+          <span>Leading the electrification programme of PSA and MPET container terminals.</span>
+        </div>
+        <div class="record-value">Programme</div>
+      </div>
+      <div class="record-row">
+        <div class="record-year">2023&ndash;25</div>
+        <div class="record-detail">
+          <strong>Denys, Project Director, HV Cable &middot; PM, Porthos CCS</strong>
+          <span>HV-cable tenders &amp; ongoing projects; CCS Rotterdam, 150 FTE workforce.</span>
+        </div>
+        <div class="record-value">&euro;80M+</div>
+      </div>
+      <div class="record-row">
+        <div class="record-year">2020&ndash;23</div>
+        <div class="record-detail">
+          <strong>Jan De Nul, Project Manager, Hollandse Kust offshore wind</strong>
+          <span>Up to five simultaneous offshore vessels; technical interfaces and permitting.</span>
+        </div>
+        <div class="record-value">&euro;150M+</div>
+      </div>
+      <div class="record-row">
+        <div class="record-year">2017&ndash;20</div>
+        <div class="record-detail">
+          <strong>Elia, Deputy Cable Package Manager, Modular Offshore Grid</strong>
+          <span>Belgium&rsquo;s &lsquo;HV plug at sea&rsquo; for the Belgian TSO.</span>
+        </div>
+        <div class="record-value">National</div>
+      </div>
+      <div class="record-row">
+        <div class="record-year">2017&ndash;20</div>
+        <div class="record-detail">
+          <strong>BOSAQ, MVP Co-Developer (alongside Elia)</strong>
+          <span>Contributed to the first MVP of an off-grid water solution startup founded by Jacob Bossaer (ex-BASF). Ongoing advisory relationship with the CEO on business development and financing. BOSAQ operates in the same mobile water infrastructure space as WIFV.</span>
+        </div>
+        <div class="record-value">Water</div>
+      </div>
+      <div class="record-row">
+        <div class="record-year">2009&ndash;17</div>
+        <div class="record-detail">
+          <strong>BASF &middot; DEME, Lead &amp; Project Engineer</strong>
+          <span>Process industry and the new build of dredgers and self-propelled jack-up barges.</span>
+        </div>
+        <div class="record-value">Foundations</div>
+      </div>
+      <div class="record-row">
+        <div class="record-year">Ongoing</div>
+        <div class="record-detail">
+          <strong>Water Irrigation, Freelance Design &amp; Installation</strong>
+          <span>Independent design and installation of water irrigation systems for private gardens. Practical, hands-on engagement with water infrastructure at a different scale, and a genuine personal interest in the sector.</span>
+        </div>
+        <div class="record-value">Side</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real case study -->
+  <section>
+    <div class="section-label"><span class="num">iv.</span> A real example of analytical judgment under pressure</div>
+    <h2>When the contract says no, <em>the analysis finds a way.</em></h2>
+    <div class="case">
+      <div class="case-tag">Jan De Nul &middot; Hollandse Kust offshore wind &middot; 2022</div>
+      <div class="case-title">A &euro;9.6M cost claim recovered on a fixed-price EPC contract</div>
+      <div class="case-subtitle">Ukraine war price shock &middot; Labour, equipment &amp; fuel indices &middot; Near-full recovery</div>
+
+      <div class="case-grid">
+        <div class="case-block">
+          <h4>The situation</h4>
+          <p>In February 2022, the war in Ukraine triggered severe inflation across labour, equipment and fuel markets. Our contract was fixed-price EPC with no reimbursement mechanism. On paper, we carried the full cost exposure with no contractual route to recovery.</p>
+        </div>
+        <div class="case-block">
+          <h4>The analysis</h4>
+          <p>I rebuilt the complete project cost structure using actual market price indices, separating the impact across three categories: labour, equipment and fuel. The output was a detailed, watertight Excel model tied directly to the contractual selling price breakdown, leaving no room for the client to dispute the methodology.</p>
+        </div>
+        <div class="case-block">
+          <h4>The process</h4>
+          <p>The claim was presented through graduated communication with the client, building the case incrementally rather than opening with the full number. Internally, I maintained regular alignment with the Project Director throughout, who joined the final negotiation meeting to support the close.</p>
+        </div>
+        <div class="case-block">
+          <h4>The outcome</h4>
+          <p>Near-full recovery of the &euro;9.6M claim. The index mechanism I developed was subsequently incorporated into new contract templates, changing how the company structures fixed-price exposure going forward.</p>
+        </div>
+      </div>
+
+      <div class="case-takeaway">
+        A fixed-price contract is not the end of the conversation. Rigorous analysis, presented with discipline, can recover value that the contract appears to have closed off. That is the lens I bring to an investment portfolio.
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature -->
+  <footer class="signature">
+    <div class="sig-quote">
+      I would welcome a conversation about how this profile could serve WIFV&rsquo;s mandate, not as a substitute for deep project-finance experience, but as the executor&rsquo;s seat beside it.
+    </div>
+    <div class="sig-mark">
+      Ward Mertens
+      <span>May 2026</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
