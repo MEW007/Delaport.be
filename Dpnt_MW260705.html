@@ -1,0 +1,646 @@
+<title>Ward Mertens — Business Manager / CEO, Dupont Electro</title>
+<meta name="description" content="Sollicitatie en cv van Ward Mertens voor de functie Business Manager / CEO bij Dupont Electro." />
+
+<style>
+  :root {
+    --bg: #F2F4F5;
+    --surface: #FFFFFF;
+    --surface-2: #EBEEEF;
+    --ink: #16202B;
+    --ink-muted: #55626E;
+    --accent: #B8763F;      /* copper — cabling, craft */
+    --accent-strong: #1F4E79; /* circuit blue — HV signage */
+    --border: #DADFE2;
+    --shadow: 0 1px 2px rgba(22,32,43,0.05), 0 8px 24px -12px rgba(22,32,43,0.18);
+    --radius: 3px;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: "Avenir Next", "Century Gothic", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10151A;
+      --surface: #171E24;
+      --surface-2: #1D252C;
+      --ink: #E9EDEF;
+      --ink-muted: #8FA0AC;
+      --accent: #D99356;
+      --accent-strong: #6FA8DC;
+      --border: #29323B;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10151A;
+    --surface: #171E24;
+    --surface-2: #1D252C;
+    --ink: #E9EDEF;
+    --ink-muted: #8FA0AC;
+    --accent: #D99356;
+    --accent-strong: #6FA8DC;
+    --border: #29323B;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+  }
+  :root[data-theme="light"] {
+    --bg: #F2F4F5;
+    --surface: #FFFFFF;
+    --surface-2: #EBEEEF;
+    --ink: #16202B;
+    --ink-muted: #55626E;
+    --accent: #B8763F;
+    --accent-strong: #1F4E79;
+    --border: #DADFE2;
+    --shadow: 0 1px 2px rgba(22,32,43,0.05), 0 8px 24px -12px rgba(22,32,43,0.18);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; text-wrap: balance; color: var(--ink); margin: 0; }
+  a { color: var(--accent-strong); }
+  p { margin: 0 0 1em; max-width: 62ch; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ---------- Nav ---------- */
+  nav.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .navlinks {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .navlinks a {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .navlinks a:hover { color: var(--ink); background: var(--surface-2); }
+  .navlinks a.active { color: var(--accent-strong); font-weight: 600; }
+  .navlinks a:focus-visible, .btn:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent-strong);
+    outline-offset: 2px;
+  }
+  .progress {
+    position: absolute;
+    left: 0; bottom: -1px;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+    transition: width 0.1s linear;
+  }
+
+  /* ---------- Layout helpers ---------- */
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  .prose { max-width: 720px; }
+  section { padding: 88px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 72px 0 64px; }
+  .hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.1rem); line-height: 1.08; margin: 10px 0 6px; }
+  .hero .role {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    margin-bottom: 22px;
+  }
+  .hero .pitch { font-size: 1.08rem; color: var(--ink); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .stat {
+    background: var(--surface);
+    padding: 20px 16px;
+    text-align: left;
+  }
+  .stat .num {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    color: var(--accent-strong);
+    font-variant-numeric: tabular-nums;
+    display: block;
+    line-height: 1;
+  }
+  .stat .label {
+    font-size: 0.76rem;
+    color: var(--ink-muted);
+    margin-top: 8px;
+    display: block;
+    line-height: 1.35;
+  }
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---------- Letter ---------- */
+  .letter {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 48px 56px;
+  }
+  @media (max-width: 640px) { .letter { padding: 32px 24px; } }
+  .letter .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+    font-size: 0.86rem;
+    color: var(--ink-muted);
+  }
+  .letter .letterhead .from strong { color: var(--ink); font-family: var(--serif); font-size: 1.05rem; display: block; margin-bottom: 2px; }
+  .letter .subject { font-weight: 600; color: var(--ink); margin-bottom: 20px; }
+  .letter p { max-width: none; font-size: 1rem; color: var(--ink); }
+  .letter .sign { margin-top: 32px; }
+  .letter .sign strong { font-family: var(--serif); font-size: 1.1rem; }
+
+  /* ---------- Timeline ---------- */
+  .timeline { position: relative; }
+  .timeline-track {
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-track .fill {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, var(--accent-strong), var(--accent));
+    transition: height 0.2s ease-out;
+  }
+  .entry {
+    position: relative;
+    padding-left: 34px;
+    padding-bottom: 40px;
+  }
+  .entry:last-child { padding-bottom: 0; }
+  .entry .dot {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--accent-strong);
+  }
+  .entry .when {
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .entry h3 { font-size: 1.2rem; margin-top: 4px; }
+  .entry .org { color: var(--accent-strong); font-weight: 600; font-family: var(--sans); font-size: 0.95rem; }
+  .entry p { margin-top: 8px; font-size: 0.96rem; color: var(--ink-muted); max-width: 60ch; }
+
+  /* ---------- Grid sections (education / skills) ---------- */
+  .cols {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+  }
+  @media (max-width: 720px) { .cols { grid-template-columns: 1fr; gap: 40px; } }
+
+  .creds { list-style: none; margin: 0; padding: 0; }
+  .creds li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .creds li:last-child { border-bottom: none; }
+  .creds .what { font-weight: 600; }
+  .creds .school { color: var(--ink-muted); font-size: 0.9rem; display: block; }
+  .creds .badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .creds .when { color: var(--ink-muted); font-size: 0.82rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .taglist { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .tag {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--ink-muted);
+    background: var(--surface);
+  }
+  .langs { margin-top: 28px; }
+  .lang-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 0.9rem; }
+  .lang-row .name { width: 90px; flex-shrink: 0; color: var(--ink-muted); }
+  .lang-bar { flex: 1; height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+  .lang-bar span { display: block; height: 100%; background: var(--accent-strong); border-radius: 3px; transform-origin: left; transform: scaleX(0); transition: transform 0.8s ease; }
+  .lang-bar.in span { transform: scaleX(1); }
+
+  /* ---------- Footer / contact ---------- */
+  footer { padding: 72px 0 96px; }
+  .contact-card {
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: var(--radius);
+    padding: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  :root[data-theme="dark"] .contact-card, @media (prefers-color-scheme: dark) { }
+  .contact-card h2 { color: var(--bg); font-size: 1.6rem; }
+  .contact-card p { color: color-mix(in srgb, var(--bg) 70%, transparent); margin: 6px 0 0; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #1B1005;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 13px 22px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px -6px rgba(0,0,0,0.4); }
+  .fineprint { text-align: center; color: var(--ink-muted); font-size: 0.78rem; margin-top: 28px; }
+
+  .section-head { margin-bottom: 44px; }
+  .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-top: 8px; }
+  .section-head .eyebrow { display: block; margin-bottom: 2px; }
+</style>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <span class="wordmark">Ward Mertens</span>
+    <ul class="navlinks">
+      <li><a href="#motivatie" data-nav>Motivatie</a></li>
+      <li><a href="#ervaring" data-nav>Ervaring</a></li>
+      <li><a href="#opleiding" data-nav>Opleiding &amp; vaardigheden</a></li>
+      <li><a href="#contact" data-nav>Contact</a></li>
+    </ul>
+  </div>
+  <div class="progress" id="progress"></div>
+</nav>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Sollicitatie — Business Manager / CEO, Dupont Electro</p>
+    <h1>Vijftien jaar kapitaalprojecten.<br>Klaar om er zelf één te leiden.</h1>
+    <p class="role">Department Manager Electricity &amp; Energy, PSA Antwerpen — voordien Project Director / Project Manager bij Denys, Jan De Nul en Elia</p>
+    <p class="pitch">Technische diepgang, ondernemerschap en een bewezen trackrecord in het aansturen van industriële teams en hoogspanningsprojecten. Vandaag al zelfstandig ondernemer, op zoek naar een organisatie om mee te bouwen in plaats van van nul te beginnen.</p>
+
+    <div class="stats reveal" id="stats">
+      <div class="stat"><span class="num" data-count="15" data-suffix="+">0</span><span class="label">jaar kapitaalintensieve infrastructuurprojecten</span></div>
+      <div class="stat"><span class="num" data-count="230" data-suffix="+">0</span><span class="label">M€ gecombineerde projectwaarde (Hollandse Kust &amp; Porthos)</span></div>
+      <div class="stat"><span class="num" data-count="150" data-suffix="">0</span><span class="label">FTE aangestuurd op één project (Porthos CCS)</span></div>
+      <div class="stat"><span class="num" data-count="5" data-suffix="">0</span><span class="label">offshore vaartuigen gelijktijdig operationeel (Hollandse Kust)</span></div>
+    </div>
+  </section>
+
+  <section id="motivatie">
+    <div class="section-head reveal">
+      <span class="eyebrow">01 — De motivatie</span>
+      <h2>Waarom Dupont Electro</h2>
+    </div>
+
+    <div class="letter reveal">
+      <div class="letterhead">
+        <div class="from">
+          <strong>Ward Mertens</strong>
+          Steenokkerzeel, België · ward@delaport.be · +32 470 17 35 27
+        </div>
+        <div class="to">
+          Dupont Electro<br>t.a.v. de aanwervende verantwoordelijke<br>Steenokkerzeel, 5 juli 2026
+        </div>
+      </div>
+
+      <p class="subject">Betreft: Sollicitatie Business Manager / CEO</p>
+      <p>Geachte,</p>
+      <p>Een technisch bedrijf overnemen dat al veertig jaar overeind staat, met de steun van een groep in de rug maar zonder de log van een grote corporate structuur: dat is precies de stap waar ik naar op zoek ben. Vandaar mijn sollicitatie voor de rol van Business Manager/CEO bij Dupont Electro.</p>
+      <p>Vandaag leid ik als Department Manager Electricity &amp; Energy bij PSA het volledige elektrificatieprogramma van de container terminals in Antwerpen. Voordien was ik Project Director voor de HV-cable divisie bij Denys, verantwoordelijk voor zowel nieuwe tenders als lopende projecten in de energiesector, en Project Manager voor Porthos, een CCS-project van 80+ miljoen euro met een team van 150 man. Bij Jan De Nul stuurde ik als Project Manager de offshore uitvoering van Hollandse Kust aan, een contract van 150+ miljoen euro met tot vijf schepen gelijktijdig op zee. Die ervaring is precies wat Dupont Electro vraagt: hoog- en laagspanningsinstallaties, verdeelborden en totaalprojecten voor industriële klanten, aangestuurd door iemand die de techniek zelf begrijpt en niet enkel de cijfers opvolgt.</p>
+      <p>Wat mij aanspreekt in deze rol is de combinatie van techniek en eindverantwoordelijkheid. Ik heb vijftien jaar ervaring in het leiden van technische teams, van vier jaar als Lead Engineer bij BASF tot het aansturen van meer dan 100 mensen op projectsites. Ik ben gewoon om tussen de mensen te staan, klanten te bezoeken en beslissingen te nemen die meteen impact hebben. Dat is ook waarom ik nu bewust een stap zoek richting ondernemerschap: ik wil verantwoordelijkheid nemen over een geheel, strategie en dagelijkse werking samen, in een omgeving waar mijn aanwezigheid het verschil maakt in plaats van verdwijnt in een managementlaag.</p>
+      <p>Ondernemerschap is voor mij trouwens geen theoretische ambitie. Ik ben vandaag al zelfstandig ondernemer en werk vanuit mijn eigen managementvennootschap. Ik ken dus de realiteit van verantwoordelijkheid dragen, risico nemen en beslissingen zelf moeten verantwoorden. Precies daarom hecht ik veel belang aan de mogelijkheid tot participatie in het groeiverhaal van Dupont Electro: ik wil niet enkel de organisatie aansturen, maar er ook effectief in participeren, met &ldquo;skin in the game&rdquo;. Dat maakt voor mij het verschil tussen een mandaat uitvoeren en mee eigenaar zijn van het resultaat.</p>
+      <p>Mijn commerciële affiniteit is gegroeid uit de praktijk: als Project Director bij Denys volgde ik zowel tenders als klantrelaties op, zonder ooit de &ldquo;verkoper&rdquo; te willen zijn. Ik geloof in vertrouwen opbouwen via geleverde kwaliteit en aanwezigheid. Die aanpak sluit aan bij hoe Dupont Electro haar klantenbestand heeft uitgebouwd: langdurige relaties, korte beslissingslijnen, hands-on opvolging.</p>
+      <p>Mijn Executive MBA aan Antwerp Management School, afgerond met onderscheiding <em>magna cum laude</em>, heeft de financiële en strategische bagage aangescherpt die nodig is om een organisatie zoals Dupont Electro naar haar volgende groeifase te leiden, terwijl mijn technische achtergrond (Master Elektromechanica, summa cum laude) en PMI-certificering me toelaten om zowel de planning, kwaliteit als rendabiliteit van projecten scherp te bewaken.</p>
+      <p>Ik zou de kans om Dupont Electro verder uit te bouwen, met de steun van Vytech Group en Vybros Capital Partners, graag persoonlijk toelichten.</p>
+      <div class="sign">
+        <p style="margin-bottom:2px;">Met vriendelijke groeten,</p>
+        <strong>Ward Mertens</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="ervaring">
+    <div class="section-head reveal">
+      <span class="eyebrow">02 — Het traject</span>
+      <h2>Vijftien jaar in kapitaalprojecten</h2>
+    </div>
+
+    <div class="timeline reveal" id="timeline">
+      <div class="timeline-track"><div class="fill" id="track-fill"></div></div>
+
+      <div class="entry">
+        <span class="dot"></span>
+        <span class="when">2025 — heden</span>
+        <h3>Department Manager, Electricity &amp; Energy</h3>
+        <span class="org">PSA, Antwerpen</span>
+        <p>Eindverantwoordelijke voor het volledige elektrificatieprogramma van de PSA- en MPET-containerterminals.</p>
+      </div>
+
+      <div class="entry">
+        <span class="dot"></span>
+        <span class="when">2023 — 2025</span>
+        <h3>Project Director, HV-cable (Energies)</h3>
+        <span class="org">Denys</span>
+        <p>Verantwoordelijk voor nieuwe tenders en lopende HV-kabelprojecten. Daarnaast Project Manager voor Porthos (Rotterdam): CCS-contract van 80+ M€ met een team van 150 FTE.</p>
+      </div>
+
+      <div class="entry">
+        <span class="dot"></span>
+        <span class="when">2020 — 2023</span>
+        <h3>Project Manager / Interface Manager</h3>
+        <span class="org">Jan De Nul</span>
+        <p>Offshore windproject Hollandse Kust: 150+ M€ contractwaarde met tot 5 gelijktijdige offshore-vaartuigen. Interface Manager voor technische raakvlakken en vergunningen.</p>
+      </div>
+
+      <div class="entry">
+        <span class="dot"></span>
+        <span class="when">2017 — 2020</span>
+        <h3>Project Leader — Deputy Cable Package Manager</h3>
+        <span class="org">Elia</span>
+        <p>Modular Offshore Grid (HV-plug op zee) voor de Belgische TSO Elia.</p>
+      </div>
+
+      <div class="entry">
+        <span class="dot"></span>
+        <span class="when">2013 — 2017</span>
+        <h3>Lead Engineer</h3>
+        <span class="org">BASF</span>
+        <p>Vier jaar technisch leiderschap binnen een grootschalige industriële site.</p>
+      </div>
+
+      <div class="entry">
+        <span class="dot"></span>
+        <span class="when">2009 — 2013</span>
+        <h3>Project Engineer</h3>
+        <span class="org">DEME</span>
+        <p>Newbuild van hopperzuigers, cutterzuigers en self-propelled jack-up platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="opleiding">
+    <div class="section-head reveal">
+      <span class="eyebrow">03 — Fundament</span>
+      <h2>Opleiding &amp; vaardigheden</h2>
+    </div>
+
+    <div class="cols reveal">
+      <div>
+        <ul class="creds">
+          <li>
+            <div>
+              <span class="what">Executive MBA</span>
+              <span class="school">Antwerp Management School</span>
+            </div>
+            <span class="badge">Magna cum laude</span>
+            <span class="when">2025–2026</span>
+          </li>
+          <li>
+            <div>
+              <span class="what">PMI — PMBOK</span>
+              <span class="school">ESHAL</span>
+            </div>
+            <span class="when">2019</span>
+          </li>
+          <li>
+            <div>
+              <span class="what">Master Elektromechanica</span>
+              <span class="school">Artesis Hogeschool</span>
+            </div>
+            <span class="badge">Summa cum laude</span>
+            <span class="when">2008–2009</span>
+          </li>
+          <li>
+            <div>
+              <span class="what">Bachelor Elektromechanica</span>
+              <span class="school">Artesis Hogeschool</span>
+            </div>
+            <span class="badge">Summa cum laude</span>
+            <span class="when">2005–2008</span>
+          </li>
+        </ul>
+
+        <div class="langs">
+          <div class="lang-row"><span class="name">Nederlands</span><div class="lang-bar"><span style="width:100%"></span></div></div>
+          <div class="lang-row"><span class="name">Engels</span><div class="lang-bar"><span style="width:90%"></span></div></div>
+          <div class="lang-row"><span class="name">Frans</span><div class="lang-bar"><span style="width:55%"></span></div></div>
+          <div class="lang-row"><span class="name">Duits</span><div class="lang-bar"><span style="width:25%"></span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px;">Digitale &amp; technische vaardigheden</p>
+        <div class="taglist">
+          <span class="tag">MS Copilot suite</span>
+          <span class="tag">VBA</span>
+          <span class="tag">Visual Studio Code</span>
+          <span class="tag">ERP — IFS, Oracle, SNOW</span>
+          <span class="tag">Oracle P6</span>
+          <span class="tag">Aconex</span>
+          <span class="tag">AutoCAD</span>
+          <span class="tag">Lassen</span>
+          <span class="tag">Mechanica</span>
+          <span class="tag">Automatisatie</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="contact-card reveal">
+      <div>
+        <h2>Laten we kennismaken.</h2>
+        <p>Steenokkerzeel, België · +32 470 17 35 27</p>
+      </div>
+      <a class="btn" href="mailto:ward@delaport.be?subject=Sollicitatie%20Business%20Manager%20%2F%20CEO%20-%20Dupont%20Electro">Stuur een e-mail →</a>
+    </div>
+    <p class="fineprint">Ward Mertens · Opgesteld voor de sollicitatie Business Manager / CEO bij Dupont Electro</p>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll progress bar
+  var progress = document.getElementById('progress');
+  function updateProgress() {
+    var h = document.documentElement;
+    var scrolled = h.scrollTop;
+    var max = h.scrollHeight - h.clientHeight;
+    progress.style.width = (max > 0 ? (scrolled / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // Scroll-spy nav
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+  var targets = navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function updateSpy() {
+    var pos = window.scrollY + 120;
+    var current = 0;
+    targets.forEach(function (t, i) { if (t && t.offsetTop <= pos) current = i; });
+    navLinks.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+  }
+  document.addEventListener('scroll', updateSpy, { passive: true });
+  updateSpy();
+
+  // Reveal on scroll
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Count-up stats
+  var counted = false;
+  function countUp() {
+    if (counted) return;
+    var statsBlock = document.getElementById('stats');
+    var rect = statsBlock.getBoundingClientRect();
+    if (rect.top > window.innerHeight * 0.85) return;
+    counted = true;
+    document.querySelectorAll('.num').forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      if (reduceMotion) { el.textContent = target + suffix; return; }
+      var start = null;
+      var duration = 900;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  document.addEventListener('scroll', countUp, { passive: true });
+  countUp();
+
+  // Timeline track fill
+  var timeline = document.getElementById('timeline');
+  var trackFill = document.getElementById('track-fill');
+  function updateTrack() {
+    var rect = timeline.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var total = rect.height;
+    var visible = Math.min(Math.max(vh * 0.75 - rect.top, 0), total);
+    var pct = total > 0 ? (visible / total) * 100 : 0;
+    trackFill.style.height = pct + '%';
+  }
+  document.addEventListener('scroll', updateTrack, { passive: true });
+  updateTrack();
+
+  // Language bars animate in
+  var langBars = document.querySelectorAll('.lang-bar');
+  if ('IntersectionObserver' in window) {
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io2.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    langBars.forEach(function (el) { io2.observe(el); });
+  } else {
+    langBars.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
