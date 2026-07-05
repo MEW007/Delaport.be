@@ -1,0 +1,697 @@
+<title>Ward Mertens — Kandidatuur Eluxa</title>
+<meta name="description" content="Operations Director / CEO-traject — Ward Mertens" />
+
+<style>
+  :root {
+    --paper: #eef3f6;
+    --paper-grid: rgba(22, 50, 79, 0.07);
+    --card: #ffffff;
+    --ink: #16324f;
+    --ink-soft: #4c6a85;
+    --ink-faint: #7e97ac;
+    --line: #16324f;
+    --line-soft: rgba(22, 50, 79, 0.22);
+    --accent: #c46a22;
+    --accent-ink: #fff8f0;
+    --good: #2f7d5e;
+    --border: rgba(22, 50, 79, 0.16);
+    --border-strong: rgba(22, 50, 79, 0.34);
+    --radius: 3px;
+    --serif: ui-serif, "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", "Noto Serif", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0e2338;
+      --paper-grid: rgba(255, 255, 255, 0.055);
+      --card: #122a42;
+      --ink: #e7f1f8;
+      --ink-soft: #9fc0d6;
+      --ink-faint: #6f92aa;
+      --line: #6fd0e8;
+      --line-soft: rgba(111, 208, 232, 0.28);
+      --accent: #e2933a;
+      --accent-ink: #241203;
+      --good: #5fc79a;
+      --border: rgba(255, 255, 255, 0.12);
+      --border-strong: rgba(255, 255, 255, 0.24);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0e2338;
+    --paper-grid: rgba(255, 255, 255, 0.055);
+    --card: #122a42;
+    --ink: #e7f1f8;
+    --ink-soft: #9fc0d6;
+    --ink-faint: #6f92aa;
+    --line: #6fd0e8;
+    --line-soft: rgba(111, 208, 232, 0.28);
+    --accent: #e2933a;
+    --accent-ink: #241203;
+    --good: #5fc79a;
+    --border: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.24);
+  }
+  :root[data-theme="light"] {
+    --paper: #eef3f6;
+    --paper-grid: rgba(22, 50, 79, 0.07);
+    --card: #ffffff;
+    --ink: #16324f;
+    --ink-soft: #4c6a85;
+    --ink-faint: #7e97ac;
+    --line: #16324f;
+    --line-soft: rgba(22, 50, 79, 0.22);
+    --accent: #c46a22;
+    --accent-ink: #fff8f0;
+    --good: #2f7d5e;
+    --border: rgba(22, 50, 79, 0.16);
+    --border-strong: rgba(22, 50, 79, 0.34);
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--paper-grid) 1px, transparent 1px) 0 0 / 100% 32px,
+      linear-gradient(90deg, var(--paper-grid) 1px, transparent 1px) 0 0 / 32px 100%,
+      var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 48px) clamp(18px, 5vw, 40px) 80px;
+  }
+
+  a { color: var(--accent); }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 10px;
+  }
+
+  h1, h2, h3 { text-wrap: balance; font-weight: 600; }
+
+  /* ---------- Title block ---------- */
+  .titleblock {
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--card);
+    padding: clamp(22px, 4vw, 40px) clamp(20px, 5vw, 44px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .titleblock h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.1rem, 6vw, 3.2rem);
+    line-height: 1.05;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .titleblock .role {
+    font-family: var(--mono);
+    font-size: clamp(12.5px, 2vw, 14px);
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 0 0 22px;
+    text-transform: uppercase;
+  }
+
+  .hero-svg { display: block; width: 100%; height: auto; margin: 8px 0 26px; }
+  .hero-svg .spine { fill: none; stroke: var(--line); stroke-width: 1.6; }
+  .hero-svg .branch { fill: none; stroke: var(--line-soft); stroke-width: 1.4; }
+  .hero-svg .node { fill: var(--card); stroke: var(--line); stroke-width: 1.6; }
+  .hero-svg .node-fill { fill: var(--accent); }
+  .hero-svg .pulse {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-dasharray: 6 220;
+    animation: travel 5.5s linear infinite;
+  }
+  @keyframes travel { to { stroke-dashoffset: -226; } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-svg .pulse { animation: none; opacity: 0; }
+  }
+
+  .meta-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    border-top: 1px solid var(--border);
+    margin-top: 4px;
+  }
+  .meta-cell {
+    padding: 12px 16px 0;
+    border-left: 1px solid var(--border);
+  }
+  .meta-cell:first-child { border-left: none; padding-left: 0; }
+  .meta-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 3px;
+  }
+  .meta-value { font-size: 14.5px; margin: 0 0 12px; }
+  .meta-value a { color: var(--ink); text-decoration-color: var(--border-strong); }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: clamp(40px, 6vw, 64px); }
+
+  .section-head { margin-bottom: 20px; }
+  .section-head h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin: 0 0 6px;
+  }
+  .section-head p { margin: 0; color: var(--ink-soft); max-width: 62ch; }
+
+  .pull {
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 20px;
+    margin: 36px 0 0;
+  }
+
+  .duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .duo .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+  }
+  .duo .card h3 {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  .duo .card p { margin: 0; color: var(--ink-soft); }
+  @media (max-width: 640px) { .duo { grid-template-columns: 1fr; } }
+
+  /* ---------- Timeline ---------- */
+  .timeline { position: relative; margin-top: 8px; padding-left: 28px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 1.6px;
+    background: var(--line-soft);
+  }
+  .tnode { position: relative; padding: 0 0 34px 24px; }
+  .tnode:last-child { padding-bottom: 0; }
+  .tnode::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 13px;
+    height: 13px;
+    background: var(--card);
+    border: 2px solid var(--line);
+    transform: rotate(45deg);
+  }
+  .tnode.current::before { background: var(--accent); border-color: var(--accent); }
+
+  .tnode-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 14px;
+    margin-bottom: 6px;
+  }
+  .tnode-co { font-weight: 700; font-size: 1.02rem; }
+  .tnode-role { color: var(--ink-soft); font-size: 0.95rem; }
+  .tnode-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .tnode-body { color: var(--ink-soft); margin: 0 0 10px; max-width: 64ch; }
+
+  .plate-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .plate {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.03em;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    padding: 4px 9px;
+    color: var(--ink);
+    background: var(--card);
+  }
+  .chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: var(--radius);
+    padding: 4px 9px;
+  }
+
+  /* ---------- Spec table (gebouwtechnieken) ---------- */
+  .flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 5px 10px;
+    margin-bottom: 16px;
+  }
+  .flag::before { content: "\25C6"; font-size: 9px; }
+
+  .tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  thead th {
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-strong);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--ink-soft);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody td:first-child { color: var(--ink); font-weight: 600; }
+  tbody tr.critical td:first-child { color: var(--accent); }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    white-space: nowrap;
+  }
+  .status .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--good); flex: none; }
+  .status.crit .dot { background: var(--accent); }
+  .status.pending .dot { background: transparent; border: 1.5px solid var(--ink-faint); }
+  .status.pending { color: var(--ink-faint); }
+
+  .req-quote { font-style: italic; color: var(--ink-faint); font-size: 12.5px; margin-top: 3px; }
+
+  /* ---------- Skills ---------- */
+  .chiprow { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 4px; }
+  .skillchip {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    padding: 7px 12px;
+    background: var(--card);
+  }
+
+  /* ---------- Why Eluxa ---------- */
+  .whyblock {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+  }
+  .whyblock p { margin: 0 0 14px; color: var(--ink-soft); }
+  .whyblock p:last-child { margin-bottom: 0; }
+  .whyblock strong { color: var(--ink); }
+
+  /* ---------- Sign-off ---------- */
+  .signoff {
+    margin-top: clamp(48px, 7vw, 72px);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--card);
+    padding: clamp(24px, 4vw, 36px);
+  }
+  .signoff-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    align-items: end;
+  }
+  @media (max-width: 640px) { .signoff-grid { grid-template-columns: 1fr; } }
+  .signoff h2 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 8px; }
+  .signoff p { color: var(--ink-soft); margin: 0; max-width: 46ch; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+  @media (min-width: 641px) { .cta-row { justify-content: flex-end; } }
+  .btn {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius);
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn.ghost { color: var(--ink); border-color: var(--border-strong); }
+
+  .sig-strip {
+    margin-top: 26px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="titleblock">
+    <p class="eyebrow">Kandidatuur — Operations Director / CEO-traject — Eluxa</p>
+    <h1>Ward Mertens</h1>
+    <p class="role">Department Manager Electricity &amp; Energy, PSA Antwerpen · Elektromecanicus &amp; Executive MBA</p>
+
+    <svg class="hero-svg" viewBox="0 0 600 90" preserveAspectRatio="none" role="img" aria-label="Schematische enkellijnstroomdiagram">
+      <path class="spine" d="M10 45 H590" />
+      <path class="branch" d="M90 45 V16 H150" />
+      <path class="branch" d="M210 45 V74 H270" />
+      <path class="branch" d="M330 45 V16 H390" />
+      <path class="branch" d="M450 45 V74 H510" />
+      <path class="pulse" d="M10 45 H590" />
+      <circle class="node" cx="90" cy="45" r="5" />
+      <circle class="node" cx="210" cy="45" r="5" />
+      <circle class="node" cx="330" cy="45" r="5" />
+      <circle class="node" cx="450" cy="45" r="5" />
+      <circle class="node node-fill" cx="570" cy="45" r="6" />
+      <circle class="node" cx="150" cy="16" r="4" />
+      <circle class="node" cx="270" cy="74" r="4" />
+      <circle class="node" cx="390" cy="16" r="4" />
+      <circle class="node" cx="510" cy="74" r="4" />
+    </svg>
+
+    <div class="meta-row">
+      <div class="meta-cell">
+        <p class="meta-label">Locatie</p>
+        <p class="meta-value">Steenokkerzeel, België</p>
+      </div>
+      <div class="meta-cell">
+        <p class="meta-label">Telefoon</p>
+        <p class="meta-value"><a href="tel:+32470173527">+32 470 17 35 27</a></p>
+      </div>
+      <div class="meta-cell">
+        <p class="meta-label">E-mail</p>
+        <p class="meta-value"><a href="mailto:ward@delaport.be">ward@delaport.be</a></p>
+      </div>
+      <div class="meta-cell">
+        <p class="meta-label">Motivatiebrief ingediend</p>
+        <p class="meta-value">02.05.2026</p>
+      </div>
+    </div>
+  </header>
+
+  <p class="pull reveal">&ldquo;Uw vacature las ik met herkenning. De combinatie van operationele verantwoordelijkheid, een groeiend bedrijf en een duidelijk traject richting algemeen management is precies de stap die ik aan het zetten ben.&rdquo;</p>
+
+  <section>
+    <div class="section-head reveal">
+      <h2>Techniek en business, met dezelfde vanzelfsprekendheid</h2>
+      <p>Een masterdiploma elektromechanica en een Executive MBA in dezelfde loopbaan. Zeldzaam in de elektrotechnische sector, en precies de combinatie die een CEO-traject in een technisch installatiebedrijf vraagt.</p>
+    </div>
+    <div class="duo reveal">
+      <div class="card">
+        <h3>Techniek</h3>
+        <p>MSc Elektromechanica, Artesis Hogeschool, summa cum laude (2009). Ik spreek de taal van de werkvloer: techniekers, projectteams, calculatie en uitvoering.</p>
+      </div>
+      <div class="card">
+        <h3>Zaken</h3>
+        <p>Executive MBA, Antwerp Management School (2026). Financiële, strategische en organisatorische sturing van een groeiende onderneming, vanuit het perspectief van de boardroom.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <h2>Loopbaan</h2>
+      <p>Zestien jaar, ononderbroken, bij grote elektrotechnische en infrastructuuraannemers. Van tekentafel tot boardroom, telkens dichter bij de eindverantwoordelijkheid.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tnode">
+        <div class="tnode-head">
+          <span class="tnode-co">DEME</span>
+          <span class="tnode-role">Project Engineer</span>
+          <span class="tnode-date">2009 – 2013</span>
+        </div>
+        <p class="tnode-body">Nieuwbouw van hopperzuigers, cutterzuigers en zelfvarende jack-upplatformen. Design-begeleiding van accommodatiedekken: verlichting, HVAC, telecom en CCTV.</p>
+        <div class="plate-row"><span class="chip">Gebouwtechnieken</span></div>
+      </div>
+      <div class="tnode">
+        <div class="tnode-head">
+          <span class="tnode-co">BASF</span>
+          <span class="tnode-role">Lead Engineer</span>
+          <span class="tnode-date">2013 – 2017</span>
+        </div>
+        <p class="tnode-body">Technische engineering in een industriële procesomgeving.</p>
+      </div>
+      <div class="tnode">
+        <div class="tnode-head">
+          <span class="tnode-co">Elia</span>
+          <span class="tnode-role">Project Leader</span>
+          <span class="tnode-date">2017 – 2020</span>
+        </div>
+        <p class="tnode-body">Deputy Cable Package Manager voor het Modular Offshore Grid, de hoogspanningsknoop op zee van de Belgische TSO.</p>
+      </div>
+      <div class="tnode">
+        <div class="tnode-head">
+          <span class="tnode-co">Jan De Nul</span>
+          <span class="tnode-role">Project Manager / Interface Manager</span>
+          <span class="tnode-date">2020 – 2023</span>
+        </div>
+        <p class="tnode-body">Offshore windproject Hollands Kust: interfacebeheer en vergunningen, later projectleiding met tot vijf offshore vaartuigen gelijktijdig in bedrijf.</p>
+        <div class="plate-row"><span class="plate">150M+ EUR</span></div>
+      </div>
+      <div class="tnode">
+        <div class="tnode-head">
+          <span class="tnode-co">Denys</span>
+          <span class="tnode-role">Project Manager / Project Director</span>
+          <span class="tnode-date">2023 – 2025</span>
+        </div>
+        <p class="tnode-body">CCS-project Porthos in Rotterdam, gevolgd door Project Director voor de HV-kabelprojecten binnen divisie Energies: tenders en lopende projecten. Boardlid van de joint venture met Van Vulpen en Alsema voor het TenneT-project IJmuiden Ver: contractstructuur, equity-financiering en P&amp;L.</p>
+        <div class="plate-row"><span class="plate">80M+ EUR</span><span class="plate">150 FTE</span></div>
+      </div>
+      <div class="tnode current">
+        <div class="tnode-head">
+          <span class="tnode-co">PSA Antwerpen</span>
+          <span class="tnode-role">Department Manager Electricity &amp; Energy</span>
+          <span class="tnode-date">2025 – heden</span>
+        </div>
+        <p class="tnode-body">Leiding van het elektrificatieprogramma van de volledige terminal. Bouwportfolio: garages, marine operations, kantoren en technische infrastructuur.</p>
+        <div class="plate-row"><span class="chip">Gebouwtechnieken</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <span class="flag">Absolute vereiste volgens vacature</span>
+      <h2>Gebouwtechnieken</h2>
+      <p>Eluxa stelt het scherp: kandidaten zonder relevante ervaring in gebouwtechnieken komen niet in aanmerking. Drie directe bewijspunten uit de loopbaan.</p>
+    </div>
+    <div class="tablewrap reveal">
+      <table>
+        <thead>
+          <tr><th>Bron</th><th>Context</th><th>Installaties</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DEME, 2009–2013</td>
+            <td>Accommodatiedekken op nieuwbouwschepen</td>
+            <td>Verlichting, HVAC, telecom, CCTV</td>
+          </tr>
+          <tr>
+            <td>PSA Antwerpen, 2025–heden</td>
+            <td>Bouwportfolio van de containerterminal</td>
+            <td>HVAC, lichtsturing, data, brandbeveiliging</td>
+          </tr>
+          <tr>
+            <td>Nevenactiviteit, doorlopend</td>
+            <td>Installaties bij particulieren</td>
+            <td>Beregeningsinstallaties, algemene elektriciteit, automatisering</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <h2>Getoetst aan de vacature</h2>
+      <p>De vacaturetekst punt voor punt naast het eigen profiel gelegd, zoals bij een tenderdossier.</p>
+    </div>
+    <div class="tablewrap reveal">
+      <table>
+        <thead>
+          <tr><th>Vereiste</th><th>Bewijs</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Masterdiploma<div class="req-quote">&ldquo;Elektrotechniek, Elektromechanica of gelijkwaardig&rdquo;</div></td>
+            <td>MSc Elektromechanica, Artesis Hogeschool (2009)</td>
+            <td><span class="status"><span class="dot"></span>Voldaan</span></td>
+          </tr>
+          <tr>
+            <td>Ervaring<div class="req-quote">&ldquo;minstens 10 jaar&rdquo;</div></td>
+            <td>16 jaar ononderbroken: DEME, BASF, Elia, Jan De Nul, Denys, PSA</td>
+            <td><span class="status"><span class="dot"></span>Voldaan</span></td>
+          </tr>
+          <tr class="critical">
+            <td>Gebouwtechnieken<div class="req-quote">&ldquo;absolute vereiste&rdquo;</div></td>
+            <td>Accommodatiedekken (DEME), bouwportfolio terminal (PSA), particuliere installaties (nevenactiviteit)</td>
+            <td><span class="status crit"><span class="dot"></span>Kritisch, voldaan</span></td>
+          </tr>
+          <tr>
+            <td>Eindverantwoordelijke rol<div class="req-quote">&ldquo;zware operationele leidinggevende rol&rdquo;</div></td>
+            <td>Department Manager (PSA), Project Director (Denys)</td>
+            <td><span class="status"><span class="dot"></span>Voldaan</span></td>
+          </tr>
+          <tr>
+            <td>P&amp;L-verantwoordelijkheid<div class="req-quote">&ldquo;budgetten, marges, bedrijfsresultaten&rdquo;</div></td>
+            <td>Boardlid JV TenneT IJmuiden Ver (contractstructuur, equity, P&amp;L); PM Porthos 80M+ EUR; PM Hollands Kust 150M+ EUR</td>
+            <td><span class="status"><span class="dot"></span>Voldaan</span></td>
+          </tr>
+          <tr>
+            <td>People management<div class="req-quote">&ldquo;uitbouwen van teams&rdquo;</div></td>
+            <td>Projectteams tot 150+ medewerkers aangestuurd (Jan De Nul, Denys)</td>
+            <td><span class="status"><span class="dot"></span>Voldaan</span></td>
+          </tr>
+          <tr>
+            <td>Ondernemerszin<div class="req-quote">&ldquo;strategisch én operationeel handelen&rdquo;</div></td>
+            <td>Aannemersdynamiek van binnenuit: tenders, marges, bijsturen. Zelfstandige nevenactiviteit in elektriciteit en automatisering</td>
+            <td><span class="status"><span class="dot"></span>Voldaan</span></td>
+          </tr>
+          <tr>
+            <td>Natuurlijke autoriteit<div class="req-quote">&ldquo;zonder hiërarchie centraal te stellen&rdquo;</div></td>
+            <td>Leiding vanuit inhoudelijke betrokkenheid en zakelijk inzicht</td>
+            <td><span class="status pending"><span class="dot"></span>Toe te lichten in gesprek</span></td>
+          </tr>
+          <tr>
+            <td>Taal<div class="req-quote">&ldquo;Nederlands uitstekend, Frans/Engels een troef&rdquo;</div></td>
+            <td>Nederlands: moedertaal. Engels: zeer goed. Frans: functioneel</td>
+            <td><span class="status"><span class="dot"></span>Voldaan</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <h2>Digitale skills</h2>
+      <p>Actief gebruikt in projectrapportering en -beheer, inclusief zelfgebouwde tools.</p>
+    </div>
+    <div class="chiprow reveal">
+      <span class="skillchip">MS Copilot suite</span>
+      <span class="skillchip">Claude Code</span>
+      <span class="skillchip">Visual Studio Code</span>
+      <span class="skillchip">VBA</span>
+      <span class="skillchip">ERP — IFS, Oracle, SNOW</span>
+      <span class="skillchip">Oracle Primavera P6</span>
+      <span class="skillchip">Aconex</span>
+      <span class="skillchip">AutoCAD</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <h2>Waarom Eluxa</h2>
+    </div>
+    <div class="whyblock reveal">
+      <p>Eluxa bevindt zich op een moment waarop de keuzes die nu gemaakt worden bepalend zijn voor de volgende groeifase. Dat is het type uitdaging waar ik naar op zoek ben.</p>
+      <p>Ik geloof ook in de sector: <strong>elektrotechnische installaties zijn de ruggengraat van de energietransitie</strong>, en de vraag zal de komende jaren alleen maar toenemen. Vanuit mijn achtergrond in hoog- en middenspanning en industriële elektriciteit bij Elia, Jan De Nul en Denys zie ik reële mogelijkheden voor Eluxa om op termijn te groeien in het HV/MV- en industrieel elektriciteitssegment. Ik licht dat graag toe in een gesprek.</p>
+    </div>
+  </section>
+
+  <div class="signoff reveal">
+    <div class="signoff-grid">
+      <div>
+        <h2>Kennismaking?</h2>
+        <p>Ik kijk uit naar een gesprek over de volgende groeifase van Eluxa.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:ward@delaport.be?subject=Kandidatuur%20Operations%20Director%20%2F%20CEO-traject">Stuur een bericht</a>
+        <a class="btn ghost" href="tel:+32470173527">Bel direct</a>
+      </div>
+    </div>
+    <div class="sig-strip">
+      <span>Ward Mertens · Steenokkerzeel</span>
+      <span>Kandidatuur Operations Director / CEO-traject · Eluxa</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
