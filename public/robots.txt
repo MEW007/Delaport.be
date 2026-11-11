@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /infrastructure/
+
+Sitemap: https://www.delaport.be/sitemap-index.xml

@@ -1,0 +1,63 @@
+---
+import Irrigation from '../../layouts/Irrigation.astro';
+import { site } from '../../config';
+const formEnabled = Boolean(site.web3formsKey);
+---
+
+<Irrigation
+  title="Contact & offerte | Delaport Irrigation"
+  description="Vraag vrijblijvend een offerte aan voor automatische tuinberegening. Delaport Irrigation, Perk."
+>
+  <section class="section">
+    <div class="container contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Vraag een offerte</h1>
+        <p class="lead">Bij vragen, aarzel niet om contact op te nemen. We komen graag langs voor een vrijblijvend voorstel.</p>
+        <ul class="details">
+          <li><span>Telefoon</span><a href={site.phoneHref}>{site.phone}</a></li>
+          <li><span>E-mail</span><a href={`mailto:${site.email}`}>{site.email}</a></li>
+          <li><span>Locatie</span>{site.location}</li>
+        </ul>
+      </div>
+
+      {
+        formEnabled ? (
+          <form class="card form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value={site.web3formsKey} />
+            <input type="hidden" name="subject" value="Offerteaanvraag via delaport.be/irrigation" />
+            <input type="hidden" name="redirect" value="https://www.delaport.be/irrigation/bedankt/" />
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+            <label>Voor- en achternaam<input name="name" required autocomplete="name" /></label>
+            <label>E-mailadres<input type="email" name="email" required autocomplete="email" /></label>
+            <label>Telefoon (optioneel)<input type="tel" name="phone" autocomplete="tel" /></label>
+            <label>Gemeente<input name="gemeente" autocomplete="address-level2" /></label>
+            <label>Uw vraag<textarea name="message" rows="5" required placeholder="Bv. gazon van ca. 300 m², ook borders en een moestuin…" /></label>
+            <button class="btn" type="submit">Versturen</button>
+            <p class="small">We gebruiken uw gegevens enkel om uw vraag te beantwoorden. <a href="/privacy/">Privacy</a></p>
+          </form>
+        ) : (
+          <div class="card">
+            <h3>Stuur ons een bericht</h3>
+            <p>Mail ons met een korte omschrijving van uw tuin (oppervlakte, gemeente, wat u wilt beregenen).</p>
+            <a class="btn" href={`mailto:${site.email}?subject=Offerteaanvraag%20tuinberegening`}>Mail ons</a>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</Irrigation>
+
+<style>
+  .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .details { list-style: none; padding: 0; margin: 24px 0 0; }
+  .details li { display: flex; flex-direction: column; padding: 12px 0; border-top: 1px solid var(--line); }
+  .details span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  .form { display: flex; flex-direction: column; gap: 14px; }
+  label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 0.95rem; }
+  input, textarea { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+  .hp { display: none; }
+  .small { font-size: 0.85rem; color: var(--muted); margin: 0; }
+  @media (max-width: 800px) { .contact { grid-template-columns: 1fr; } }
+</style>

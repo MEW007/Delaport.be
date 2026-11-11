@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets';
+import Irrigation from '../../layouts/Irrigation.astro';
+import { site } from '../../config';
+import hero from '../../assets/realisaties/hoeve-aartselaar.jpeg';
+import dakterras from '../../assets/realisaties/dakterras-antwerpen.jpeg';
+
+const voordelen = [
+  { titel: 'Tijdbesparend', tekst: 'De watergift wordt nauwkeurig ingesteld en loopt vanzelf. Geen slangen meer verleggen.' },
+  { titel: 'Efficiënt', tekst: 'Water komt gericht waar het nodig is, met minder verspilling en een lagere waterfactuur.' },
+  { titel: 'Constant', tekst: 'Uw gazon en planten krijgen regelmatig water, ook tijdens warme en droge periodes.' },
+  { titel: 'Slim', tekst: 'Het systeem koppelt met het dichtstbijzijnde weerstation en past zich aan de actuele weersvoorspelling aan.' },
+];
+
+const diensten = [
+  { titel: 'Ontwerp', tekst: 'Een beregeningsplan op maat van uw tuin, terras of dakterras: zones, sproeiers, druppelleiding en sturing.' },
+  { titel: 'Installatie', tekst: 'Grondwerk, leidingwerk en elektrische aansluiting, top afgewerkt en in bedrijf gesteld.' },
+  { titel: 'Onderhoud', tekst: 'Opstart in het voorjaar, winterklaar maken in het najaar, en herstellingen aan bestaande installaties.' },
+];
+---
+
+<Irrigation
+  title="Delaport Irrigation | Automatische tuinberegening"
+  description="Automatische tuinberegening op maat in de regio Antwerpen–Mechelen–Brussel. Ontwerp, installatie en onderhoud, gekoppeld aan het weerbericht."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Delaport Irrigation</p>
+        <h1>Laat het gras niet groener zijn aan de overkant</h1>
+        <p class="lead">
+          Ontstaan uit een passie voor groen gras en automatisering. Wij ontwerpen en installeren automatische
+          beregeningssystemen die uw tuin gezond houden, ook tijdens de droogste zomers.
+        </p>
+        <div class="actions">
+          <a class="btn" href="/irrigation/contact/">Vraag een offerte</a>
+          <a class="btn btn--ghost" href="/irrigation/realisaties/">Bekijk realisaties</a>
+        </div>
+      </div>
+      <Image src={hero} alt="Gazon met automatische beregening op een hoeve in Aartselaar" widths={[480, 800, 1200]} sizes="(max-width: 800px) 100vw, 50vw" class="hero-img" loading="eager" />
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <p class="eyebrow">Waarom automatische beregening</p>
+      <h2>Voordelen</h2>
+      <div class="grid grid--2 benefits">
+        {
+          voordelen.map((v) => (
+            <div class="card">
+              <h3>{v.titel}</h3>
+              <p>{v.tekst}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <Image src={dakterras} alt="Installatie van druppelleiding op een dakterras in Antwerpen" widths={[480, 800, 1200]} sizes="(max-width: 800px) 100vw, 50vw" class="rounded" />
+      <div>
+        <p class="eyebrow">Wat we doen</p>
+        <h2>Van ontwerp tot onderhoud</h2>
+        {
+          diensten.map((d) => (
+            <div class="service">
+              <h3>{d.titel}</h3>
+              <p>{d.tekst}</p>
+            </div>
+          ))
+        }
+        <p>Voor particulieren, tuinaannemers en professionele tuinders. Werkregio: de as Antwerpen–Mechelen–Brussel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Klaar voor een tuin die zichzelf water geeft?</h2>
+      <p class="lead">Vertel ons kort over uw tuin. We komen langs voor een vrijblijvend voorstel.</p>
+      <div class="actions">
+        <a class="btn" href="/irrigation/contact/">Contacteer ons</a>
+        <a class="btn btn--ghost" href={site.phoneHref}>Bel {site.phone}</a>
+      </div>
+    </div>
+  </section>
+</Irrigation>
+
+<style>
+  .hero { padding: 56px 0 72px; background: linear-gradient(180deg, var(--accent-soft), #fff); }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+  .hero-img { border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; width: 100%; max-height: 560px; }
+  .benefits .card h3 { color: var(--accent); }
+  .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
+  .rounded { border-radius: var(--radius); }
+  .service { border-left: 3px solid var(--green); padding-left: 16px; margin-bottom: 18px; }
+  .service p { margin-bottom: 0; color: var(--ink-soft); }
+  .cta { background: var(--accent); color: #fff; text-align: center; }
+  .cta .lead { color: #e4eefb; margin: 0 auto; }
+  .cta .actions { justify-content: center; }
+  .cta .btn { background: #fff; color: var(--accent); border-color: #fff; }
+  .cta .btn--ghost { background: transparent; color: #fff; }
+  @media (max-width: 800px) {
+    .hero-grid, .split { grid-template-columns: 1fr; gap: 32px; }
+    .hero-img { aspect-ratio: 4 / 3; }
+  }
+</style>

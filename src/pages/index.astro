@@ -1,0 +1,76 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { site } from '../config';
+import irrigationImg from '../assets/realisaties/hoeve-kempen.jpeg';
+---
+
+<Base
+  title="Delaport group"
+  description={site.infrastructurePublic
+    ? 'Delaport group: Delaport Irrigation (automatische tuinberegening) en Delaport Infrastructure (scope governance voor grote infrastructuurprojecten).'
+    : 'Delaport group: Delaport Irrigation, automatische tuinberegening in de regio Antwerpen–Mechelen–Brussel.'}
+>
+  <section class="intro">
+    <div class="container">
+      <p class="wordmark">delaport</p>
+      <h1>Technische vakkennis, tot in de details afgewerkt.</h1>
+      <p class="lead">
+        {site.infrastructurePublic
+          ? 'Delaport group bundelt twee bedrijven met dezelfde basis: van automatische tuinberegening tot de aansturing van grote infrastructuurprojecten.'
+          : 'Delaport group: automatisering en kwaliteit, van ontwerp tot oplevering.'}
+      </p>
+    </div>
+  </section>
+
+  <section class:list={['container tiles', { single: !site.infrastructurePublic }]}>
+    <a class="tile irrigation" href="/irrigation/">
+      <Image src={irrigationImg} alt="" widths={[480, 800]} sizes="(max-width: 800px) 100vw, 50vw" />
+      <div class="tile-body">
+        <span class="tag">Delaport Irrigation</span>
+        <h2>Automatische tuinberegening</h2>
+        <p>Ontwerp, installatie en onderhoud voor particulieren en tuinaannemers in de regio Antwerpen–Brussel.</p>
+        <span class="more">Naar Irrigation →</span>
+      </div>
+    </a>
+
+    {
+      site.infrastructurePublic && (
+        <a class="tile infrastructure" href="/infrastructure/">
+          <div class="pattern" aria-hidden="true" />
+          <div class="tile-body">
+            <span class="tag">Delaport Infrastructure</span>
+            <h2>Scope governance voor grote projecten</h2>
+            <p>Onafhankelijke begeleiding van infrastructuur- en energieprojecten in België en Nederland, van tender tot oplevering.</p>
+            <span class="more">Naar Infrastructure →</span>
+          </div>
+        </a>
+      )
+    }
+  </section>
+
+  <footer slot="footer" class="foot container">
+    <p>Delaport · {site.location} · <a href={`mailto:${site.email}`}>{site.email}</a> · <a href="/privacy/">Privacy</a></p>
+  </footer>
+</Base>
+
+<style>
+  .intro { padding: 80px 0 40px; }
+  .wordmark { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.03em; margin-bottom: 2em; }
+  .intro h1 { max-width: 20ch; }
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-bottom: 64px; }
+  .tiles.single { grid-template-columns: minmax(0, 560px); }
+  .tile { display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid var(--line); transition: transform 0.2s ease, box-shadow 0.2s ease; background: #fff; }
+  .tile:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08); }
+  .tile img, .pattern { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .pattern { background: linear-gradient(135deg, #14365c, #2b5a8a); background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 22px), linear-gradient(135deg, #14365c, #2b5a8a); }
+  .tile-body { padding: 26px 28px 30px; }
+  .tag { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; }
+  .irrigation .tag, .irrigation .more { color: #1f6fd1; }
+  .infrastructure .tag, .infrastructure .more { color: #14365c; }
+  .tile h2 { font-size: 1.5rem; margin: 0.4em 0; }
+  .tile p { color: var(--ink-soft); }
+  .more { font-weight: 700; }
+  .foot { border-top: 1px solid var(--line); padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: 0.92rem; }
+  @media (max-width: 800px) { .tiles { grid-template-columns: 1fr; } }
+</style>

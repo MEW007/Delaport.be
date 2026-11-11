@@ -1,0 +1,84 @@
+---
+import Irrigation from '../../layouts/Irrigation.astro';
+import { site } from '../../config';
+
+const jobPosting = {
+  '@context': 'https://schema.org',
+  '@type': 'JobPosting',
+  title: 'Allround technieker irrigatie & tuinaanleg',
+  description:
+    'Aanleg, inbedrijfstelling en onderhoud van automatische beregeningssystemen. Flexi-job of zelfstandige samenwerking, regio Antwerpen–Brussel.',
+  datePosted: '2026-11-11',
+  employmentType: ['PART_TIME', 'CONTRACTOR'],
+  hiringOrganization: { '@type': 'Organization', name: 'Delaport Irrigation', sameAs: 'https://www.delaport.be/irrigation/' },
+  jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Perk', addressCountry: 'BE' } },
+};
+---
+
+<Irrigation
+  title="Vacature: allround technieker irrigatie | Delaport Irrigation"
+  description="Delaport Irrigation zoekt een allround technieker irrigatie & tuinaanleg (flexi-job of zelfstandig) in de regio Antwerpen–Brussel."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jobPosting)} />
+
+  <article class="section">
+    <div class="container narrow">
+      <p class="eyebrow">Vacature · Flexi-job of zelfstandige samenwerking · Regio Antwerpen–Brussel</p>
+      <h1>Allround technieker irrigatie &amp; tuinaanleg</h1>
+      <p class="lead">
+        De zomers worden droger, de tuinen dorstiger, en bij Delaport Irrigation kunnen we het werk amper bijhouden. Om
+        die groei aan te kunnen, zoeken we een handige vakman die mee onze reputatie van top afgewerkt werk waarmaakt.
+      </p>
+
+      <h2>Wat ga je doen?</h2>
+      <p>
+        Het werk is een combinatie van machinaal en manueel grondwerk, en hydraulische en elektrische aansluitingen. Tot
+        slot zet je het systeem zelf in bedrijf. Je werkt zelfstandig op de werf, denkt mee over de beste technische
+        oplossing, en levert werk af waar je zelf trots op bent.
+      </p>
+      <p>Daarnaast kan je ook ingezet worden voor herstellingen, jaarlijks onderhoud en opstart van bestaande installaties.</p>
+
+      <h2>Wie we zoeken</h2>
+      <ul>
+        <li>Een allround technieker die zich thuis voelt in meerdere disciplines: elektriciteit, hydraulica/leidingwerk, mechanica. Geen hoger diploma nodig, wel gezond verstand en handigheid.</li>
+        <li>Ervaring in de sanitaire sector is een sterke troef.</li>
+        <li>Affiniteit met tuinaanleg of tuinbouw is mooi meegenomen.</li>
+        <li>Je werkt net, gestructureerd en met oog voor detail; veiligheid en kwaliteit staan voorop.</li>
+        <li>Je bent flexibel inzetbaar, ook voor projecten buiten de regio.</li>
+      </ul>
+
+      <h2>Wat we bieden</h2>
+      <ul>
+        <li>Werk in een sector die alleen maar groeit: droogte is helaas het nieuwe normaal, en dat betekent werkzekerheid.</li>
+        <li>Werkregio: de as Antwerpen–Brussel, met af en toe een werf verder weg. Dan voorzien we overnachting.</li>
+        <li>Duidelijk voorbereide werven en een vast aanspreekpunt: geen improvisatie op de werf.</li>
+        <li>Verloning in overleg, afhankelijk van je statuut en ervaring.</li>
+      </ul>
+
+      <div class="grid grid--2 forms">
+        <div class="card">
+          <h3>Flexi-job</h3>
+          <p>Werk je elders al minstens 4/5 of ben je gepensioneerd? Bijverdienen met belastingvrij loon, zonder je hoofdjob op te geven.</p>
+        </div>
+        <div class="card">
+          <h3>Zelfstandige samenwerking</h3>
+          <p>Heb je een eigen zaak en wil je structureel voor ons werken, met vrijheid over planning en aanpak? Ook dan zijn we vragende partij.</p>
+        </div>
+      </div>
+
+      <h2>Interesse?</h2>
+      <p>
+        Stuur je gegevens naar <a href={`mailto:${site.email}?subject=Vacature%20technieker%20irrigatie`}>{site.email}</a>
+        of bel naar <a href={site.phoneHref}>{site.phone}</a>. Laat meteen weten welke samenwerkingsvorm het beste bij jou past.
+      </p>
+    </div>
+  </article>
+</Irrigation>
+
+<style>
+  .narrow { max-width: 760px; }
+  h2 { margin-top: 1.6em; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 0.4em; }
+  .forms { margin: 28px 0 8px; }
+</style>

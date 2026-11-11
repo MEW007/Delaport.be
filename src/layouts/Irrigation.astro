@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import Base from './Base.astro';
+import { site } from '../config';
+import logo from '../assets/brand/delaport-logo.png';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+const { title, description, noindex = false } = Astro.props;
+const path = Astro.url.pathname;
+
+const nav = [
+  { href: '/irrigation/', label: 'Home' },
+  { href: '/irrigation/realisaties/', label: 'Realisaties' },
+  { href: '/irrigation/vacature/', label: 'Vacature' },
+  { href: '/irrigation/contact/', label: 'Contact' },
+];
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: 'Delaport Irrigation',
+  description: 'Automatische tuinberegening: ontwerp, installatie en onderhoud.',
+  url: 'https://www.delaport.be/irrigation/',
+  email: site.email,
+  telephone: site.phone,
+  address: { '@type': 'PostalAddress', addressLocality: 'Perk', addressRegion: 'Vlaams-Brabant', addressCountry: 'BE' },
+  areaServed: ['Antwerpen', 'Mechelen', 'Brussel', 'Vlaams-Brabant'],
+  parentOrganization: { '@type': 'Organization', name: 'Delaport', url: 'https://www.delaport.be/' },
+};
+---
+
+<Base title={title} description={description} section="irrigation" noindex={noindex}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
+
+  <header slot="header" class="site-header">
+    <div class="container bar">
+      <a href="/irrigation/" class="brand" aria-label="Delaport Irrigation — home">
+        <Image src={logo} alt="Delaport Irrigation Systems" width={72} />
+      </a>
+      <nav aria-label="Hoofdmenu">
+        <ul>
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <slot />
+
+  <footer slot="footer" class="site-footer">
+    <div class="container cols">
+      <div>
+        <strong>Delaport Irrigation</strong>
+        <p>Automatische tuinberegening<br />{site.location}</p>
+      </div>
+      <div>
+        <p>
+          <a href={site.phoneHref}>{site.phone}</a><br />
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+      </div>
+      <div>
+        <p>
+          <a href="/">Part of the Delaport group</a><br />
+          <a href="/privacy/">Privacy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  .site-header { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 10; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 76px; }
+  .brand img { width: 64px; height: auto; }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; }
+  nav a { text-decoration: none; color: var(--ink); font-weight: 600; font-size: 0.97rem; padding: 6px 0; border-bottom: 2px solid transparent; }
+  nav a:hover, nav a[aria-current='page'] { color: var(--accent); border-color: var(--accent); }
+  .site-footer { background: var(--ink); color: #d6d9de; padding: 48px 0 40px; font-size: 0.95rem; }
+  .site-footer a { color: #fff; }
+  .site-footer strong { color: #fff; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+  @media (max-width: 560px) {
+    .bar { flex-direction: column; align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
+    .brand img { width: 52px; }
+  }
+</style>

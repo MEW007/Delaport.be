@@ -1,0 +1,52 @@
+---
+import Base from './Base.astro';
+import { site } from '../config';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<Base title={title} description={description} section="infrastructure" lang="en">
+  <Fragment slot="header">
+    {!site.infrastructurePublic && <div class="notice">Preview — this section is not yet public and is hidden from search engines.</div>}
+    <header class="site-header">
+      <div class="container bar">
+        <a href="/infrastructure/" class="brand">delaport <span>infrastructure</span></a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </Fragment>
+
+  <slot />
+
+  <footer slot="footer" class="site-footer">
+    <div class="container cols">
+      <div><strong>Delaport Infrastructure</strong><p>Scope governance for major infrastructure &amp; energy projects in Belgium and the Netherlands.</p></div>
+      <div><p><a href={`mailto:${site.email}`}>{site.email}</a></p></div>
+      <div><p><a href="/">Part of the Delaport group</a><br /><a href="/privacy/">Privacy</a></p></div>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  .site-header { background: var(--accent); color: #fff; position: sticky; top: 0; z-index: 10; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; flex-wrap: wrap; }
+  .brand { color: #fff; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; }
+  .brand span { font-weight: 500; opacity: 0.7; }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 22px; margin: 0; padding: 0; }
+  nav a { color: #dfe7f1; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  nav a:hover { color: #fff; }
+  .site-footer { background: #0c2340; color: #c8d3e0; padding: 48px 0 40px; font-size: 0.95rem; }
+  .site-footer a, .site-footer strong { color: #fff; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+</style>

@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config';
+---
+
+<Base title="Privacy | Delaport" description="Privacyverklaring van Delaport.">
+  <article class="section">
+    <div class="container narrow">
+      <p><a href="/">← Delaport</a></p>
+      <h1>Privacyverklaring</h1>
+      <!-- TODO: ondernemingsnummer en volledig adres aanvullen. -->
+      <p>Deze website wordt beheerd door Delaport, {site.location}. Contact: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+      <h2>Bezoekersstatistieken</h2>
+      <p>
+        We meten het gebruik van deze website met Cloudflare Web Analytics. Die dienst plaatst geen cookies, volgt u niet
+        over andere websites en bewaart geen persoonsgegevens zoals uw IP-adres. We zien enkel geaggregeerde cijfers (bv.
+        aantal bezoeken per pagina en herkomstland). Daarom vragen we geen cookietoestemming.
+      </p>
+
+      <h2>Contactformulier en e-mail</h2>
+      <p>
+        Gegevens die u via het contactformulier of per e-mail bezorgt (naam, e-mailadres, telefoonnummer, uw vraag)
+        gebruiken we uitsluitend om uw vraag te beantwoorden en eventueel een offerte op te maken. Het formulier wordt
+        verwerkt via Web3Forms, dat het bericht naar ons doorstuurt. We verkopen of delen uw gegevens niet met derden voor
+        marketingdoeleinden en bewaren ze niet langer dan nodig.
+      </p>
+
+      <h2>Uw rechten</h2>
+      <p>
+        U kunt uw gegevens op elk moment inkijken, laten verbeteren of laten verwijderen via
+        <a href={`mailto:${site.email}`}>{site.email}</a>. Bent u het niet eens met hoe we met uw gegevens omgaan, dan kunt u
+        terecht bij de Gegevensbeschermingsautoriteit (gegevensbeschermingsautoriteit.be).
+      </p>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .narrow { max-width: 760px; }
+  h2 { margin-top: 1.5em; font-size: 1.4rem; }
+</style>

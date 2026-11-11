@@ -1,0 +1,18 @@
+---
+// Cookieloze bezoekersanalyse via Cloudflare Web Analytics.
+// Geen cookies, geen persoonsgegevens → geen cookiebanner nodig.
+// Token instellen in src/config.ts (cfAnalyticsToken). Alleen actief in productie-builds.
+import { site } from '../config';
+const enabled = import.meta.env.PROD && site.cfAnalyticsToken;
+---
+
+{
+  enabled && (
+    <script
+      is:inline
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={JSON.stringify({ token: site.cfAnalyticsToken })}
+    />
+  )
+}

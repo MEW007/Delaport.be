@@ -1,0 +1,7 @@
+# Oude Combell-sitebuilder URL's → nieuwe structuur (Cloudflare Pages)
+/impressie/   /irrigation/realisaties/   301
+/impressie    /irrigation/realisaties/   301
+/contact/     /irrigation/contact/       301
+/contact      /irrigation/contact/       301
+/vacature/    /irrigation/vacature/      301
+/vacature     /irrigation/vacature/      301

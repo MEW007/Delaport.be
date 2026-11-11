@@ -1,0 +1,149 @@
+---
+import Infrastructure from '../../layouts/Infrastructure.astro';
+import { site } from '../../config';
+
+/*
+  LET OP — deze repo is publiek. Zet hier NOOIT:
+  - namen van (potentiële) klanten of lopende voorstellen (PSA, Aurubis, Denys, …)
+  - prijzen, fees of CAPEX-percentages
+  - inhoud onder NDA (thesis, POLARIS-cijfers)
+  - cijfers die nog niet tegen de primaire bron geverifieerd zijn
+*/
+
+const phases = [
+  {
+    phase: '1 · Define',
+    services: [{ name: 'Scope Viability Assessment', text: 'Is the scope solid enough to reserve a budget against? An independent view before capital is committed.' }],
+  },
+  {
+    phase: '2 · Tender',
+    services: [
+      { name: 'Tender Maturity Check', text: 'Gap analysis of a tender dossier with a go/no-go recommendation before it goes to market.' },
+      { name: 'Rapid Tender Structuring', text: 'A tender-ready dossier: scope boundaries, interfaces and bill of quantities.' },
+      { name: 'Scope Risk Assessment', text: 'A scope-maturity view for insurers and underwriters assessing construction risk.' },
+      { name: 'Contract Tender Check & Bid Comparison', text: 'Risk register and bid validation pre-bid; a structured comparison matrix post-bid.' },
+    ],
+  },
+  {
+    phase: '3 · Execute',
+    services: [
+      { name: 'Contract-to-Scope Translation', text: 'From signed contract to an execution-ready baseline: SBS, WBS and CBS that the whole team works from.', featured: true },
+      { name: 'Change Management Framework', text: 'A change-governance model embedded in the project team, so legitimate variations do not harden into claims.' },
+      { name: 'Scope Change Filtering', text: 'A structured decision record for every change request: accept, reject or reformulate.' },
+    ],
+  },
+  {
+    phase: '4 · Close',
+    services: [
+      { name: 'Scope Verification & Validation', text: 'Full requirement traceability: contracted vs planned vs done vs used.' },
+      { name: 'Closeout & Lessons Learned', text: 'A lessons-learned register and handover dossier that the next project can actually use.' },
+    ],
+  },
+];
+---
+
+<Infrastructure
+  title="Delaport Infrastructure | Scope governance for major projects"
+  description="Independent scope governance for complex infrastructure and energy projects in Belgium and the Netherlands — from tender to closeout."
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Delaport Infrastructure</p>
+      <h1>Better infrastructure starts with better scope.</h1>
+      <p class="lead">
+        Most major projects come in late, over budget and short of the benefits they promised. The cause is rarely execution
+        alone — it is scope: what was meant to be built, what was contracted, and what quietly drifts between the two.
+        Delaport closes that gap.
+      </p>
+      <div class="actions">
+        <a class="btn" href="#contact">Start a conversation</a>
+        <a class="btn btn--ghost" href="#services">Our services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="approach">
+    <div class="container">
+      <p class="eyebrow">Approach</p>
+      <h2>We don't design the assets. We don't build them.<br />We govern the scope that decides whether they succeed.</h2>
+      <div class="grid grid--3 approach">
+        <div class="card">
+          <h3>Independent</h3>
+          <p>Positioned at the client–contractor interface, without selling design, construction or software.</p>
+        </div>
+        <div class="card">
+          <h3>Lifecycle-spanning</h3>
+          <p>From scope definition through tender and execution to closeout — one consistent scope baseline.</p>
+        </div>
+        <div class="card">
+          <h3>Starts with a quickscan</h3>
+          <p>Every engagement starts by assessing existing procedures, governance and tools, then targets the highest-leverage intervention.</p>
+        </div>
+      </div>
+      <blockquote>
+        Contractors understand roughly 80% of scope at the moment they sign. The remaining 20% is what later gets argued over.
+        <cite>Finding from our research on scope management in major infrastructure projects (Antwerp Management School, EMBA 2024–2026)</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <p class="eyebrow">Services</p>
+      <h2>Ten services across four lifecycle phases</h2>
+      <div class="phases">
+        {
+          phases.map((p) => (
+            <div class="phase">
+              <h3 class="phase-title">{p.phase}</h3>
+              <div class="grid grid--2">
+                {p.services.map((s) => (
+                  <div class:list={['card', { featured: s.featured }]}>
+                    <h4>{s.name}</h4>
+                    <p>{s.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="team">
+    <div class="container">
+      <p class="eyebrow">Team</p>
+      <h2>Execution, commercial and contractual expertise in one team</h2>
+      <!-- TODO: profielen pas aanvullen na goedkeuring door elke vennoot. -->
+      <div class="grid grid--3">
+        <div class="card"><h3>Ward Mertens</h3><p>Engineering &amp; execution. Fifteen years in marine, energy and heavy-civil delivery, on both contractor and client side.</p></div>
+        <div class="card"><h3>Rosalie Van der Velde</h3><p>Commercial &amp; business development. Complex international negotiations and process optimisation.</p></div>
+        <div class="card"><h3>Bart Vanhalle</h3><p>Legal &amp; contractual. Contract, risk and insurance management on PPP and complex infrastructure works.</p></div>
+      </div>
+      <p class="note">Completed per engagement by a curated bench of specialists — planners, cost controllers, document controllers and contract administrators. Delaport remains the single accountable party.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Facing a tender, a signed contract or a scope dispute?</h2>
+      <p class="lead">Let's discuss where scope governance can make the difference on your project.</p>
+      <div class="actions"><a class="btn" href={`mailto:${site.email}?subject=Delaport%20Infrastructure`}>Email us</a></div>
+    </div>
+  </section>
+</Infrastructure>
+
+<style>
+  .hero { padding: 88px 0 80px; background: linear-gradient(160deg, #e7edf4 0%, #fff 70%); }
+  .hero h1 { max-width: 18ch; }
+  .approach { margin-top: 32px; }
+  blockquote { margin: 40px 0 0; padding: 24px 28px; border-left: 4px solid var(--accent); background: #fff; border-radius: 0 var(--radius) var(--radius) 0; font-size: 1.2rem; font-weight: 600; }
+  cite { display: block; margin-top: 10px; font-size: 0.85rem; font-weight: 400; font-style: normal; color: var(--muted); }
+  .phases { display: flex; flex-direction: column; gap: 36px; margin-top: 32px; }
+  .phase-title { color: var(--accent); border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+  h4 { margin: 0 0 0.4em; font-size: 1.05rem; }
+  .card p { color: var(--ink-soft); }
+  .featured { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+  .note { margin-top: 24px; color: var(--ink-soft); max-width: 70ch; }
+</style>
