@@ -23,7 +23,7 @@ delaport.be/infrastructure/   → Delaport Infrastructure — scope governance g
 - [x] Inhoud en foto's van de huidige site overgenomen (home, impressie, contact, vacature)
 - [x] Lijst van oude URL's → redirects in `public/_redirects`
 - [x] Oude sollicitatiepagina's uit de repo verwijderd
-- [ ] Cloudflare-account aanmaken
+- [x] Cloudflare-account aanmaken
 - [ ] Beslissen: repo publiek laten of privé maken (Cloudflare Pages werkt met beide)
 
 ## Fase 1 — Bouwen  ← **bezig**
