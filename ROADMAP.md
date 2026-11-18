@@ -11,7 +11,7 @@ delaport.be/infrastructure/   → Delaport Infrastructure — scope governance g
 | Onderdeel | Keuze |
 |---|---|
 | Code | Astro (statische site) in deze repo |
-| Hosting | Cloudflare Pages: automatische deploy bij elke push naar `main`, preview-URL per branch |
+| Hosting | Cloudflare Workers (static assets), gekoppeld aan GitHub: automatische deploy bij elke push naar `main` — test-URL: https://delaport-be.mertensward-mew.workers.dev |
 | Analyse | Cloudflare Web Analytics (cookieloos) + Google Search Console |
 | Formulier | Web3Forms (gratis), valt terug op `mailto:` zolang er geen sleutel is |
 | E-mail | Blijft bij Microsoft 365 — **MX/SPF/DKIM/autodiscover-records nooit wijzigen of vergeten** |
@@ -26,7 +26,7 @@ delaport.be/infrastructure/   → Delaport Infrastructure — scope governance g
 - [x] Cloudflare-account aanmaken
 - [ ] Beslissen: repo publiek laten of privé maken (Cloudflare Pages werkt met beide)
 
-## Fase 1 — Bouwen  ← **bezig**
+## Fase 1 — Bouwen
 - [x] Astro-project, gedeelde layout, aparte stijl per sectie
 - [x] Irrigation: home, realisaties, vacature, contact/offerte, bedankt
 - [x] Infrastructure: one-pager (approach, 10 services, team, contact) — **verborgen** (`infrastructurePublic: false`)
@@ -38,10 +38,11 @@ delaport.be/infrastructure/   → Delaport Infrastructure — scope governance g
 - [ ] Open Graph-afbeelding (deelvoorbeeld voor LinkedIn/WhatsApp)
 - [ ] Web3Forms-sleutel aanvragen en invullen in `src/config.ts`
 
-## Fase 2 — Live zetten
-- [ ] Cloudflare Pages koppelen aan deze GitHub-repo (build: `npm run build`, output: `dist`)
-- [ ] Alles controleren op `*.pages.dev`
-- [ ] DNS: `www` (CNAME) en `delaport.be` naar Cloudflare Pages wijzigen bij Combell. **Mailrecords onaangeroerd laten.**
+## Fase 2 — Live zetten  ← **bezig**
+- [x] Cloudflare koppelen aan deze GitHub-repo (Workers Builds; build: `npm run build`, output: `dist`)
+- [x] Gecontroleerd op workers.dev: alle pagina's 200, redirects 301, 404-pagina, noindex op Infrastructure
+- [ ] DNS-zone naar Cloudflare (nameservers bij Combell wijzigen) — **alle mail- en Microsoft 365-records eerst overnemen, DNS only**
+- [ ] Custom domains `www.delaport.be` + `delaport.be` op de Worker; redirect root → www
 - [ ] Testen: mail versturen/ontvangen op info@delaport.be, oude URL's redirecten correct
 - [ ] Combell-sitebuilder pas opzeggen na ±1 week stabiele werking (domein mag bij Combell blijven)
 
